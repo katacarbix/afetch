@@ -6,18 +6,18 @@ PREFIX ?= /usr/local
 all: afetch
 
 afetch: $(SRC) src/config.h
-	$(CC) $(CFLAGS) $(SRC) -o afetch
+    $(CC) $(CFLAGS) $(SRC) -o afetch
 
 clean:
-	rm -f afetch
+    rm -f afetch
 
 install:
-	chmod 711 ./afetch
-	cp ./afetch ${DESTDIR}${PREFIX}/bin
-	chmod 644 ./src/afetch.1
-	cp src/afetch.1 ${DESTDIR}${PREFIX}/share/man/man1 
+    chmod 711 ./afetch
+    cp ./afetch ${DESTDIR}${PREFIX}/bin
+    chmod 644 ./src/afetch.1
+    cp src/afetch.1 ${DESTDIR}${PREFIX}/share/man/man1
 uninstall:
-	rm -f ${DESTDIR}${PREFIX}/bin/afetch ${DESTDIR}${PREFIX}/man/man1/afetch.1
+    rm -f ${DESTDIR}${PREFIX}/bin/afetch ${DESTDIR}${PREFIX}/man/man1/afetch.1
 
 .PHONY: clean all install
 
